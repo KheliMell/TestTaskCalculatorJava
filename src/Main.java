@@ -64,7 +64,7 @@ public class Main {
         int units = numberForConvert % 10;
         int tens = numberForConvert - units;
         String[] allTens = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", "C"};
-        String[] allUnits = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        String[] allUnits = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String result = "";
         if (tens != 0) {
             result += allTens[tens / 10 - 1];
