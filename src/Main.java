@@ -17,7 +17,8 @@ public class Main {
 
         //проверка правильности ввода примера и проверка операнда
         try {
-            if ((inputCheckerAndFindType(numbersAndOperand))) {
+            boolean test = inputCheckerAndFindType(numbersAndOperand);
+            if (test) {
                 throw new Exception();
             }
         } catch (Exception e) {
@@ -111,7 +112,7 @@ public class Main {
 
     static boolean inputCheckerAndFindType(String[] numbersAndOperand) {
         //Проверка на количество введенной информации и првильность операнда
-        if (!(checkOperand(numbersAndOperand[1])) && (numbersAndOperand.length != 3)) {
+        if ((checkOperand(numbersAndOperand[1])) || (numbersAndOperand.length != 3)) {
             return true;
         } else {
             return !(checkNumbersAndSetType(numbersAndOperand[0], numbersAndOperand[2]));
@@ -154,7 +155,11 @@ public class Main {
     }
 
     static boolean checkOperand(String operand) {
-        return operand == "+" || operand == "-" || operand == "*" || operand == "/";
+        if (!Objects.equals(operand, "+") && !Objects.equals(operand, "-") && !Objects.equals(operand, "*") && !Objects.equals(operand, "/")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     enum RomeNumbers {
