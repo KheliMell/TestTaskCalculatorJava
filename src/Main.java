@@ -17,8 +17,7 @@ public class Main {
 
         //проверка правильности ввода примера и проверка операнда
         try {
-            boolean test = inputCheckerAndFindType(numbersAndOperand);
-            if (test) {
+            if (inputCheckerAndFindType(numbersAndOperand)) {
                 throw new Exception();
             }
         } catch (Exception e) {
